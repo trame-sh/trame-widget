@@ -1,6 +1,6 @@
 {
   "name": "@trame.sh/widget",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Embeddable feedback widget for trame",
   "type": "module",
   "main": "./dist/index.cjs",
