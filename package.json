@@ -1,0 +1,52 @@
+{
+  "name": "@trame.sh/widget",
+  "version": "0.1.0",
+  "description": "Embeddable feedback widget for trame",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/__tests__"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && npm run build:npm && npm run build:cdn && tsc --emitDeclarationOnly --outDir dist",
+    "build:npm": "vite build",
+    "build:cdn": "BUILD_FORMAT=iife vite build",
+    "dev": "vite build --watch",
+    "test": "NODE_ENV=test vitest run",
+    "test:watch": "NODE_ENV=test vitest"
+  },
+  "keywords": [
+    "feedback",
+    "widget",
+    "trame",
+    "feedback-widget"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trame-sh/trame-widget.git"
+  },
+  "homepage": "https://github.com/trame-sh/trame-widget#readme",
+  "bugs": {
+    "url": "https://github.com/trame-sh/trame-widget/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitest/browser": "^2.1.9",
+    "happy-dom": "^20.6.1",
+    "terser": "^5.37.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.9"
+  }
+}
