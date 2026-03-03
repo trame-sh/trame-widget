@@ -29,6 +29,9 @@ jobs:
 
       - run: pnpm build
 
+      # Upgrade npm to 11.5.1+ for OIDC trusted publishing support
+      - run: npm install -g npm@latest
+
       # Uses OIDC trusted publishing — no NPM_TOKEN secret needed.
       # Configure trusted publisher at npmjs.com after the first manual publish.
       - run: npm publish --access public
